@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const Student = require("./models/student.model.js");
 const app=express();
 
-app.use(express.json());
+app.use(express.json());    //middleware
 
 app.get('/',(req,res)=>{
     res.send("The Student management system API which i created on 31st august");
 })
 
-app.get('/api/student/:id',async(req,res)=>{        //find a speciifc record by id
+app.get('/api/student/:id',async(req,res)=>{        //find a specifc record by id
   try{
     const{id}=req.params;
 
@@ -23,7 +23,7 @@ app.get('/api/student/:id',async(req,res)=>{        //find a speciifc record by 
   }
 })
 
-app.post('/api/student',async(req,res)=>{         //create a new record
+app.post('/api/student',async(req,res)=>{         //create a new record in database
     
     try {
         // Extracting student data from the request body
